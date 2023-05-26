@@ -1,0 +1,42 @@
+<%= render "shared/second-header" %>
+
+<div class="session">
+  <div class="session-box">
+    <div class="session-headline">
+      ログイン
+    </div>
+    <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_with model: @user, url: user_session_path, class: 'session-main', local: true do |f| %>
+
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+
+      <div class="session-field">
+        <div class='session-form-text-wrap'>
+          <label class="session-form-text">メールアドレス</label>
+        </div>
+        <div class="form-area">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "session-form", placeholder: "メールアドレス" %>
+        </div>
+      </div>
+
+      <div class="session-field">
+        <div class='session-form-text-wrap'>
+          <label class="session-form-text">パスワード</label>
+        </div>
+        <div class="form-area">
+          <%= f.password_field :password, autocomplete: "current-password", class: "session-form", placeholder: "パスワード" %>
+        </div>
+      </div>
+
+      <div class="session-actions">
+        <%= f.submit "ログイン", class: "session-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
+
