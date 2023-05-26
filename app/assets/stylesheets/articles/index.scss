@@ -1,0 +1,45 @@
+.main {
+  width: 100vw;
+}
+
+// 画像エリア
+.top-image {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.ballpark-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 30%
+}
+
+.image-text {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  padding: 0 60px;
+  color: black;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+// 記事一覧エリア
+.main-contents {
+  width: 100%;
+  height: 500px;
+  padding: 30px 40px;
+}
+
+.articles-headline {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.articles-area {
+  width: 100%;
+}

@@ -1,3 +1,19 @@
-<h1>
-  トップページです
-</h1>
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="top-image">
+    <%= image_tag("ballpark.png", class:"ballpark-img") %>
+    <div class="image-text">
+      MLBをより身近に
+    </div>
+  </div>
+  <div class="main-contents">
+    <div class="articles-headline">
+      投稿記事一覧
+    </div>
+    <div class="articles-area">
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

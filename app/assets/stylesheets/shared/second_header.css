@@ -1,0 +1,15 @@
+.second-header {
+  width: 100vw;
+  height: 100px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-header-text {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: bold;
+}
