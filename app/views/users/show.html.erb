@@ -1,0 +1,40 @@
+<%= render "shared/header" %>
+
+<div class="mypage-main">
+  <div class="user-info">
+    <div class="profile-headline">
+      <%= @user.nickname %>さんのプロフィール
+    </div>
+    <div class="profile">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">お気に入りチーム</th>
+            <td class="table__col2"><%= "#{@user.favorite_team.name}" %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">お気に入り選手</th>
+            <td class="table__col2">
+              <% if @user.favorite_player.present?%>
+                <%= "#{@user.favorite_player}" %>
+              <% else %>
+                <div class="blank">
+                  ---
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="user-articles">
+    <div class="user-articles-headline">
+      <%= @user.nickname %>さんの投稿した記事
+    </div>
+    <div class="user-article">
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
