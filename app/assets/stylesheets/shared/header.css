@@ -76,3 +76,17 @@
   padding: 10px 20px;
   border-radius: 5px;
 }
+
+.post-articles {
+  color: white;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid white;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.post-btn {
+  text-decoration: none;
+}
