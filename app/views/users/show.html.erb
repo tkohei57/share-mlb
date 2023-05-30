@@ -33,6 +33,7 @@
       <%= @user.nickname %>さんの投稿した記事
     </div>
     <div class="user-article">
+      <%= render partial: "shared/article", collection: @articles %>
     </div>
   </div>
 </div>
