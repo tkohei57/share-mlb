@@ -29,17 +29,13 @@
 // 記事一覧エリア
 .main-contents {
   width: 100%;
-  height: 500px;
-  padding: 30px 40px;
+  padding: 30px 40px 70px;
+  // overflow: scroll;
 }
 
 .articles-headline {
   width: 100%;
-  text-align: center;
+  padding: 0 150px;
   font-size: 30px;
   font-weight: 600;
-}
-
-.articles-area {
-  width: 100%;
 }
