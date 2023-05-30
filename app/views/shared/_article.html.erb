@@ -17,6 +17,10 @@
     </div>
   </div>
   <div class="right-content">
-    <%= link_to image_tag(article.image, class: "image"), article_path(article) %>
+    <% if article.image.present?%>
+      <%= link_to image_tag(article.image, class: "image"), article_path(article) %>
+    <% else %>
+      <%= image_tag("no_img.png", class: "no-image") %>
+    <% end %>
   </div>
 </div>

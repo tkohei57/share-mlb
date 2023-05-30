@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_article, only: [:show, :edit, :update]
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
@@ -12,27 +13,42 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to root_path
+      to_root
     else
       render :new
     end
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def edit
   end
 
   def update
+    if @article.update(article_params)
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    article = Article.find(params[:id])
+    article.destroy if current_user == article.user
+    to_root
   end
 
   private
   def article_params
     params.require(:article).permit(:image, :title, :content, :team_id).merge(user_id: current_user.id)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def to_root
+    redirect_to root_path
   end
 end
