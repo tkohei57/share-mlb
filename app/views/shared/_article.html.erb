@@ -1,0 +1,22 @@
+<div class="articles-area">
+  <div class="left-content">
+    <div class="title">
+      <%= link_to article.title, "#", class: "title-link" %>
+    </div>
+    <div class="team">
+      関連するチーム：<%= link_to article.team.name, "#", class: "team-link" %>
+    </div>
+    <div class="post-user-date">
+      <div class="post-user">
+        投稿者：<%= link_to article.user.nickname, "#", class: "user-link" %>
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <div class="post-date">
+        投稿日時：<%= article.created_at %>
+      </div>
+    </div>
+  </div>
+  <div class="right-content">
+    <%= link_to image_tag(article.image, class: "image"), "#" %>
+  </div>
+</div>
