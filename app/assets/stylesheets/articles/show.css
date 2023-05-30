@@ -1,0 +1,114 @@
+.show-box {
+  width: 100%;
+  padding: 20px 200px 40px;
+  background-color: #EEEEEE;
+}
+
+.show-article {
+  width: 100%;
+  padding: 20px 50px 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.show-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.favorite-icon {
+  margin: 10px 0;
+}
+
+.show-post-user-date {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-post-user-link {
+  text-decoration: none;
+  color: black;
+}
+
+.show-date {
+  font-size: 12px;
+  color: #999999;
+}
+
+.show-team-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-team-link {
+  text-decoration: none;
+  color: black;
+}
+
+.show-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show-btn {
+  border: 1px solid black;
+  background-color: black;
+  margin-left: 15px;
+  padding: 3px 10px;
+}
+
+.show-edit-link {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.show-destroy-link {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.show-image-box {
+  width: 100%;
+  height: 400px;
+  margin: 30px 0 50px;
+  padding: 0 100px;
+}
+
+.show-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.show-content {
+  padding: 0 100px;
+}
+
+.content {
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+
+.show-back-btn-box {
+  margin: 30px 100px;
+  line-height: 50px;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+.show-back-btn {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
