@@ -38,6 +38,11 @@ class ArticlesController < ApplicationController
     article.destroy if current_user == article.user
     to_root
   end
+  
+  def search
+    @articles = Article.search(params[:keyword])
+    @keyword = params[:keyword]
+  end
 
   private
   def article_params

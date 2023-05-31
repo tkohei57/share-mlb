@@ -1,5 +1,7 @@
 .mypage-main {
   width: 100%;
+  height: calc( 100vh - 150px );
+  background-color: #f0f0f0;
   padding: 40px 150px;
 }
 
@@ -11,6 +13,7 @@
 .table {
   width: 100%;
   margin: 20px 0 40px;
+  background-color: white;
 }
 
 .table__col1 {

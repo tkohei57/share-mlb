@@ -4,6 +4,7 @@
   <div class="user-info">
     <div class="profile-headline">
       <%= @user.nickname %>さんのプロフィール
+      <i class="fa-solid fa-user"></i>
     </div>
     <div class="profile">
       <table class="table">
@@ -31,6 +32,7 @@
   <div class="user-articles">
     <div class="user-articles-headline">
       <%= @user.nickname %>さんの投稿した記事
+      <i class="fa-solid fa-newspaper"></i>
     </div>
     <div class="user-article">
       <%= render partial: "shared/article", collection: @articles %>
