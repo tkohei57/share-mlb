@@ -27,7 +27,7 @@
         関連するチーム：<%= link_to @article.team.name, "#", class: "show-team-link" %>
       </div>
       <div class="show-btns">
-        <% if current_user.id == @article.user.id %>
+        <% if current_user == @article.user %>
           <div class="show-btn">
             <%= link_to "編集", edit_article_path(@article), class: "show-edit-link" %>
           </div>
@@ -51,10 +51,57 @@
         <%= simple_format(@article.content) %>
       </pre>
     </div>
+  </div>
 
-    <div class="show-back-btn-box">
-      <%= link_to 'トップページにもどる', root_path, class: "show-back-btn" %>
+  <div class="show-comments">
+    <div class="comments-headline">
+      コメント
+      <i class="fa-regular fa-comment"></i>
     </div>
+    <div class="comment-main">
+      <% @comments.each do |comment| %>
+        <div class="comments">
+          <div class="comment-user-date">
+            <div class="comment-user">
+              <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user-link" %><span class="honorific">さん</span>
+            </div>
+            <div class="comment-date">
+              <%= comment.created_at %>
+            </div>
+          </div>
+          <div class="comment-text-box">
+            <pre class="comment-text">
+              <%= simple_format(comment.text) %>
+            </pre>
+          </div>
+        </div>
+      <% end %>
+      <div class="comment-form-area">
+        <div class="comment-form-headline">
+          コメントする
+        </div>
+        <div class="comment-form-box">
+          <% if user_signed_in? %>
+            <%= form_with(model: [@article, @comment], local: true) do |f| %>
+              <div class="show-comment-form">
+                <%= f.text_area :text, placeholder: "コメントを入力", class: "comment-form"%>
+              </div>
+              <div class="show-comment-btn">
+                <%= f.submit "コメントする", class: "comment-submit-btn"%>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="comment-alert">
+              ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="show-back-btn-box">
+    <%= link_to 'トップページにもどる', root_path, class: "show-back-btn" %>
   </div>
 </div>
 

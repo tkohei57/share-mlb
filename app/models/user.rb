@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles
+  has_many :comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :favorite_team
 
