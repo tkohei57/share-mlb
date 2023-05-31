@@ -1,0 +1,22 @@
+<%= render "shared/header"%>
+
+<div class="search_result">
+  <div class="serach-form-box">
+    <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "キーワードで投稿を検索", class: "search-input-long" %>
+      <%= f.submit "検索", class: "search-btn" %>
+    <% end %>
+  </div>
+  <div class="result-message">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    " <%= @keyword %> " での検索結果：<%= @articles.length %>件
+    <% unless @articles.present? %>
+      <div class="no-article-message">
+        該当する記事は見つかりませんでした。
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: "shared/article", collection: @articles %>
+</div>
+
+<%= render "shared/footer"%>
