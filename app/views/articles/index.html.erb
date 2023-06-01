@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div class="main">
+<div class="index-main">
   <div class="top-image">
     <%= image_tag("ballpark.png", class: "ballpark-img") %>
     <div class="image-text">
@@ -10,8 +10,8 @@
   <div class="main-contents">
     <div class="headline-search">
       <div class="articles-headline">
-        投稿記事一覧
         <i class="fa-solid fa-newspaper"></i>
+        投稿記事一覧
       </div>
       <div class="search">
         <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>

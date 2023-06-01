@@ -1,5 +1,6 @@
 .session {
   width: 100vw;
+  height: calc( 100vh - 150px );
   padding: 20px 200px;
   background-color: #f0f0f0;
 }

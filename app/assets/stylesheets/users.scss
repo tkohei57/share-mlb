@@ -1,6 +1,6 @@
 .mypage-main {
   width: 100%;
-  height: calc( 100vh - 150px );
+  flex-grow: 1;
   background-color: #f0f0f0;
   padding: 40px 150px;
 }

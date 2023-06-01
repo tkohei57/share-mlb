@@ -2,8 +2,9 @@
   box-sizing: border-box;
 }
 
-.main {
+.index-main {
   width: 100vw;
+  flex-grow: 1;
 }
 
 // 画像エリア
@@ -34,7 +35,6 @@
 .main-contents {
   width: 100%;
   padding: 30px 150px 70px;
-  // overflow: scroll;
   background-color: #f0f0f0;
 }
 
