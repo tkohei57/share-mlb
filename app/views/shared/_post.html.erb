@@ -1,10 +1,10 @@
 <div class="new-article">
   <div class="article-form">
-    <%= form_with model: @article, local: true do |f| %>
+    <%= form_with model: @article, id: 'new_post', local: true do |f| %>
       
       <%= render 'shared/error_messages', model: f.object %>
 
-      <div class="article-genre">
+      <div class="genre-image">
         <div class="genre-headline">
           ⚫️どのチームに関する記事ですか？
         </div>
@@ -14,10 +14,17 @@
           </div>
           <div class="article-image">
             <label class="form-image">
-              <i class="fa-solid fa-image fa-2xl"></i>
+              <i class="fa-solid fa-image fa-2xl article-icon"></i>
               <%= f.file_field :image, class: "image-form" %>
+              <% if @article.image.present? %>
+                <span class="image-message">画像を変更</span>
+              <% else %>
+                <span class="image-message">画像が選択されていません</span>
+              <% end %>
             </label>
           </div>
+        </div>
+        <div id="previews" class="previews">
         </div>
       </div>
       <div class="article-title">

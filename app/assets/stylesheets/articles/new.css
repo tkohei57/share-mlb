@@ -9,14 +9,27 @@
   align-items: center;
 }
 
+.article-icon {
+  margin-left: 5px;
+}
+
 .article-image {
   width: 100%;
   margin: 20px 40px;
 }
 
+.image-message {
+  margin-left: 5px;
+}
+
 .article-title {
   width: 100%;
+  margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.previews {
+  text-align: center;
 }
 
 .article-content {
