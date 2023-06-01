@@ -8,8 +8,8 @@
       <%= @article.title %>
     </div>
 
-    <div class="favorite-icon">
-      <i class="fa-regular fa-heart"></i>
+    <div class="favorite-icon" id="like-btn<%= @article.id %>">
+      <%= render partial: "shared/like", locals: { article: @article } %>
     </div>
 
     <div class="show-post-user-date"> 
