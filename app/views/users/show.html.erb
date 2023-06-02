@@ -31,11 +31,61 @@
   </div>
   <div class="user-articles">
     <div class="user-articles-headline">
-      <%= @user.nickname %>さんの投稿した記事
+      <%= @user.nickname %>さんが投稿した記事
       <i class="fa-solid fa-newspaper"></i>
     </div>
     <div class="user-article">
-      <%= render partial: "shared/article", collection: @articles %>
+      <% if @articles.present? %>
+        <%= render partial: "shared/article", collection: @articles %>
+      <% else %>
+        <div class="no-user-article-message">
+          <%= @user.nickname %>さんが投稿した記事はありません
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-like-articles">
+    <div class="user-like-articles-headline">
+      <%= @user.nickname %>さんがいいねした記事
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="user-like-article">
+      <% if @likes.present? %>
+        <% @likes.each do |like| %>
+          <div class="articles-area">
+            <div class="left-content">
+              <div class="title">
+                <%= link_to like.article.title, article_path(like.article), class: "title-link" %>
+              </div>
+              <div class="team">
+                関連するチーム：<%= link_to like.article.team.name, "#", class: "team-link" %>
+              </div>
+              <div class="post-like" id="like-btn<%= like.article.id %>">
+                <%= render partial: "shared/like", locals: { article: like.article } %>
+              </div>
+              <div class="post-user-date">
+                <div class="post-user">
+                  投稿者：<%= link_to like.article.user.nickname, user_path(like.article.user), class: "post-user-link" %>
+                </div>
+                <div class="post-date-box">
+                  投稿日時：<%= like.article.created_at %>
+                </div>
+              </div>
+            </div>
+            <div class="right-content">
+              <% if like.article.image.present?%>
+                <%= link_to image_tag(like.article.image, class: "image"), article_path(like.article) %>
+              <% else %>
+                <%= image_tag("no_img.png", class: "no-image") %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="no-user-article-message">
+          <%= @user.nickname %>さんがいいねした記事はありません
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
