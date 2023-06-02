@@ -8,15 +8,24 @@
     <% end %>
   </div>
   <div class="result-message">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    " <%= @keyword %> " での検索結果：<%= @articles.length %>件
-    <% unless @articles.present? %>
-      <div class="no-article-message">
-        該当する記事は見つかりませんでした。
+    <% if @keyword.present? %>
+      <div class="search-result-message">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        " <%= @keyword %> " での検索結果：<%= @articles.length %>件
+      </div>
+      <% if @articles.present? %>
+        <%= render partial: "shared/article", collection: @articles %>
+      <% else %>
+        <div class="no-article-message">
+          該当する記事は見つかりませんでした
+        </div>
+      <% end %>
+    <% else %>
+      <div class="no-keyword-message">
+        ※※※キーワードを入力して再度検索してください※※※
       </div>
     <% end %>
   </div>
-  <%= render partial: "shared/article", collection: @articles %>
 </div>
 
 <%= render "shared/footer"%>

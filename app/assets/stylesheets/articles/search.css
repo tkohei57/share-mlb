@@ -1,6 +1,6 @@
 .search_result {
   width: 100%;
-  height: calc( 100vh - 150px );
+  flex-grow: 1;
   padding: 30px 150px 70px;
   background-color: #f0f0f0;
 }
@@ -21,6 +21,10 @@
 }
 
 .result-message {
+  margin-bottom: 20px;
+}
+
+.search-result-message {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -28,4 +32,10 @@
 
 .no-article-message {
   margin-top: 20px;
+}
+
+.no-keyword-message {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
 }

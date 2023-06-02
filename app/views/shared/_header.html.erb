@@ -6,16 +6,18 @@
     <ul class='header-right'>
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, user_path(current_user), class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout header-btns" %></li>
         <li>
-          <div class="post-articles">
-            <%= link_to '投稿する', new_article_path, class: "post-btn"%>
-            <span><i class="fa-regular fa-pen-to-square"></i></span>
-          </div>
+          <%= link_to new_article_path do %>
+            <div class="post-articles header-btns">
+              投稿する
+              <span><i class="fa-regular fa-pen-to-square"></i></span>
+            </div>
+          <% end %>
         </li>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login header-btns" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up header-btns" %></li>
       <% end %>
     </ul>
   </div>
