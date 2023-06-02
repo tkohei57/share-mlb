@@ -60,9 +60,7 @@
           <%= f.text_field :favorite_player, autocomplete: "favorite_player", class: "form", placeholder: "例) Shohei Ohtani" %>
         </div>
 
-        <div class="actions">
-          <%= f.submit "登録する", class: "registration-btn"%>
-        </div>
+        <%= f.submit "登録する", class: "registration-btn devise-btns"%>
       </div>
     </div>
   <% end %>

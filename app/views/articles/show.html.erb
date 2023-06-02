@@ -14,7 +14,7 @@
 
     <div class="show-post-user-date"> 
       <div class="show-post-user">
-        投稿者：<%= link_to @article.user.nickname, user_path(@article.user), class: "show-post-user-link" %>
+        投稿者：<%= link_to @article.user.nickname, user_path(@article.user), class: "show-post-user-link users" %>
       </div>
       
       <div class="show-date">
@@ -24,16 +24,12 @@
     
     <div class="show-team-btns">
       <div class="show-team">
-        関連するチーム：<%= link_to @article.team.name, "#", class: "show-team-link" %>
+        関連するチーム：<%= link_to @article.team.name, "#", class: "show-team-link teams" %>
       </div>
       <div class="show-btns">
         <% if current_user == @article.user %>
-          <div class="show-btn">
-            <%= link_to "編集", edit_article_path(@article), class: "show-edit-link" %>
-          </div>
-          <div class="show-btn">
-            <%= link_to "削除", article_path(@article), method: :delete, class: "show-destroy-link" %>
-          </div>
+          <%= link_to "編集", edit_article_path(@article), class: "edit-destroy-btn" %>
+          <%= link_to "削除", article_path(@article), method: :delete, class: "edit-destroy-btn" %>
         <% end %>
       </div>
     </div>
@@ -100,9 +96,7 @@
     </div>
   </div>
 
-  <div class="show-back-btn-box">
-    <%= link_to 'トップページにもどる', root_path, class: "show-back-btn" %>
-  </div>
+  <%= link_to 'トップページにもどる', root_path, class: "show-back-btn back-btns" %>
 </div>
 
 <%= render "shared/footer" %>

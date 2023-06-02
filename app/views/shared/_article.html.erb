@@ -4,14 +4,14 @@
       <%= link_to article.title, article_path(article), class: "title-link" %>
     </div>
     <div class="team">
-      関連するチーム：<%= link_to article.team.name, "#", class: "team-link" %>
+      関連するチーム：<%= link_to article.team.name, "#", class: "team-link teams" %>
     </div>
     <div class="post-like" id="like-btn<%= article.id %>">
       <%= render partial: "shared/like", locals: { article: article } %>
     </div>
     <div class="post-user-date">
       <div class="post-user">
-        投稿者：<%= link_to article.user.nickname, user_path(article.user), class: "post-user-link" %>
+        投稿者：<%= link_to article.user.nickname, user_path(article.user), class: "post-user-link users" %>
       </div>
       <div class="post-date-box">
         投稿日時：<%= article.created_at %>

@@ -6,7 +6,8 @@
 
       <div class="genre-image">
         <div class="genre-headline">
-          ⚫️どのチームに関する記事ですか？
+          <i class="fa-solid fa-clipboard-question fa-xl"></i>
+          どのチームに関する記事ですか？
         </div>
         <div class="pulldown-icon">
           <div class="pulldown">
@@ -36,12 +37,8 @@
       </div>
 
       <div class="btn-contents">
-        <div class="post-btn-content">
-          <%= f.submit "投稿する" ,class: "post-btn" %>
-        </div>
-        <div class="back-btn-box">
-          <%= link_to 'トップページにもどる', root_path, class: "back-btn" %>
-        </div>
+        <%= f.submit "投稿する" ,class: "post-btn" %>
+        <%= link_to 'トップページにもどる', root_path, class: "back-btn back-btns" %>
       </div>
 
     <% end %>

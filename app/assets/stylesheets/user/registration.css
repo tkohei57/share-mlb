@@ -50,11 +50,9 @@
   background-color: black;
 }
 
-.actions {
-  margin: 20px 0 40px;
-}
-
 .registration-btn {
+  width: 300px;
+  margin: 20px 0 40px;
   padding: 5px 10px;
   color: white;
   background-color: black;

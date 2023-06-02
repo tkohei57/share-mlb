@@ -49,27 +49,11 @@
   color: black;
 }
 
-.show-btns {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.show-btn {
+.edit-destroy-btn {
   border: 1px solid black;
   background-color: black;
   margin-left: 15px;
-  padding: 3px 10px;
-}
-
-.show-edit-link {
-  text-decoration: none;
-  color: white;
-  letter-spacing: 3px;
-  font-weight: 600;
-}
-
-.show-destroy-link {
+  padding: 8px 10px;
   text-decoration: none;
   color: white;
   letter-spacing: 3px;
@@ -79,7 +63,7 @@
 .show-image-box {
   width: 100%;
   height: 400px;
-  margin: 30px 0 50px;
+  margin: 50px 0;
   padding: 0 100px;
 }
 
@@ -104,16 +88,14 @@
   font-size: 16px;
 }
 
-.show-back-btn-box {
+.show-back-btn {
+  display: block;
   margin: 30px 0;
+  width: 100%;
   line-height: 50px;
   text-align: center;
   background-color: lightgray;
   border-radius: 10px;
-}
-
-.show-back-btn {
-  width: 100%;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
@@ -212,7 +194,7 @@
   width: 100%;
   padding: 5px 0;
   color: black;
-  background-color: #EEEEEE;
+  background-color: #DDDDDD;
   border: none;
   border-radius: 10px;
   font-size: 14px;
