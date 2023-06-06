@@ -5,13 +5,76 @@
   padding: 40px 150px;
 }
 
-.profile-headline {
+.mypage-message {
   font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.profile-follow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-headline {
+  font-size: 25px;
   font-weight: bold;
 }
 
+.unfollow-btn {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.follow-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-following-btn {
+  display: block;
+  background-color: white;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.profile-follower-btn {
+  display: block;
+  background-color: white;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
 .table {
-  width: 100%;
+  width: 70%;
   margin: 20px 0 40px;
   background-color: white;
 }
@@ -33,7 +96,7 @@
 }
 
 .user-articles-headline {
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -45,12 +108,90 @@
 }
 
 .user-like-articles-headline {
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
 .no-user-like-article-message {
+  font-size: 18px;
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+.user-followings {
+  margin-bottom: 40px;
+  display: none;
+}
+
+.user-followers {
+  margin-bottom: 40px;
+  display: none;
+}
+
+.user-followings-headline {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.following {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.follow-box {
+  width: 45%;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.following-name {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.no-following-message {
+  font-size: 18px;
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+.user-followers-headline {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.follower {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.follower-name {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.no-follower-message {
   font-size: 18px;
   padding-top: 20px;
   margin-bottom: 40px;

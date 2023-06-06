@@ -10,4 +10,7 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+  end
 end

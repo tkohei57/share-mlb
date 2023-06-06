@@ -7,6 +7,13 @@ class User < ApplicationRecord
   has_many :articles
   has_many :comments
   has_many :likes
+
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  has_many :followings, through: :active_relationships, source: :follower
+
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  has_many :followers, through: :passive_relationships, source: :following
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :favorite_team
 
@@ -14,4 +21,9 @@ class User < ApplicationRecord
   validates :favorite_team_id, numericality: { other_than: 1, message: "can't be blank" }
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' }
+
+  def followed_by?(user)
+    follower = passive_relationships.find_by(following_id: user.id)
+    return follower.present?
+  end
 end

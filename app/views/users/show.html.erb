@@ -1,12 +1,35 @@
 <%= render "shared/header" %>
 
 <div class="mypage-main">
+  <div class="mypage-message">
+    <%= @user.nickname %>さんのマイページ
+    <i class="fa-solid fa-house-circle-check"></i>
+  </div>
   <div class="user-info">
-    <div class="profile-headline">
-      <%= @user.nickname %>さんのプロフィール
-      <i class="fa-solid fa-user"></i>
+    <div class="profile-follow">
+      <div class="profile-headline">
+        <%= @user.nickname %>さんのプロフィール
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="follow">
+        <% if @user != current_user %>
+          <% if @user.followed_by?(current_user) %>
+            <%= link_to "フォロー中", user_relationships_path(@user.id), class: "unfollow-btn", method: :delete %>
+          <% else %>
+            <%= link_to "フォロー", user_relationships_path(@user.id), class: "follow-btn", method: :post %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="profile">
+      <div class="following-follower">
+        <button class="profile-following-btn" id="show-followings">
+          <%= @user.followings.length %>フォロー
+        </button>
+        <button class="profile-follower-btn" id="show-followers">
+          <%= @user.followers.length %>フォロワー
+        </button>
+      </div>
       <table class="table">
         <tbody>
           <tr>
@@ -29,6 +52,68 @@
       </table>
     </div>
   </div>
+
+  <div class="user-followings" id="user-followings">
+    <div class="user-followings-headline">
+      <%= @user.nickname %>さんがフォローしているユーザー
+      <i class="fa-solid fa-person-circle-plus"></i>
+    </div>
+    <div class="followings">
+      <% if @user.followings.present? %>
+        <div class="following">
+          <% @user.followings.each do |following| %>
+            <div class="follow-box">
+              <%= link_to following.nickname, user_path(following), class: "following-name users" %>
+              <div class="follow-btns">
+                <% if following != current_user %>
+                  <% if following.followed_by?(current_user) %>
+                    <%= link_to "フォロー中", user_relationships_path(following.id), class: "unfollow-btn", method: :delete %>
+                  <% else %>
+                    <%= link_to "フォロー", user_relationships_path(following.id), class: "follow-btn", method: :post %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="no-following-message">
+          <%= @user.nickname %>さんがフォローしているユーザーはいません
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-followers" id="user-followers">
+    <div class="user-followers-headline">
+      <%= @user.nickname %>さんのフォロワー
+      <i class="fa-solid fa-person-circle-plus"></i>
+    </div>
+    <div class="followers">
+      <% if @user.followers.present? %>
+        <div class="follower">
+          <% @user.followers.each do |follower| %>
+            <div class="follow-box">
+              <%= link_to follower.nickname, user_path(follower), class: "follower-name users" %>
+              <div class="follow-btns">
+                <% if follower != current_user %>
+                  <% if follower.followed_by?(current_user) %>
+                    <%= link_to "フォロー中", user_relationships_path(follower.id), class: "unfollow-btn", method: :delete %>
+                  <% else %>
+                    <%= link_to "フォロー", user_relationships_path(follower.id), class: "follow-btn", method: :post %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="no-follower-message">
+          <%= @user.nickname %>さんのフォロワーはいません
+        </div>
+      <% end %>
+    </div>
+  </div>
+
   <div class="user-articles">
     <div class="user-articles-headline">
       <%= @user.nickname %>さんが投稿した記事
