@@ -28,14 +28,13 @@ https://docs.google.com/spreadsheets/d/18NDfNvGBLrX8vlwi1smn1MIBrLcYzkTAOX7tlDcR
 
 # 実装予定の機能
 ・複数画像投稿機能
-・フォロー機能
 ・試合データや選手データの表示機能(データを取得できるAPIがあれば)
 
 # データベース設計（現段階でのもの）
-https://gyazo.com/a2bea2558e51ecc3763003befb44fe54
+https://gyazo.com/5f09b2dc97afe6ade7ab42b8a68738e1
 
 # 画面遷移図（現段階でのもの）
-https://gyazo.com/1cef06867f41b79e0650056258dff60b
+https://gyazo.com/50085226df47689b6fc35e84cf4b2bdd
 
 # 開発環境
 Ruby, Ruby on Rails, JavaScript, Render

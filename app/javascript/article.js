@@ -105,6 +105,28 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  // 投稿ボタン
+  const postBtns = document.querySelectorAll(".post-btn");
+  postBtns.forEach((postBtn) => {
+    postBtn.addEventListener("mouseover", function() {
+      this.setAttribute("style", "background-color: #666666;");
+    });
+    postBtn.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "background-color: #666666;");
+    });
+  });
+
+  //新規登録・ログインボタン
+  const deviseBtns = document.querySelectorAll(".devise-btns");
+  deviseBtns.forEach((deviseBtn) => {
+    deviseBtn.addEventListener("mouseover", function() {
+      this.setAttribute("style", "background-color: #666666;");
+    });
+    deviseBtn.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "background-color: #666666;");
+    });
+  });
+
   // フォローボタン
   const followBtns = document.querySelectorAll(".follow-btn");
   followBtns.forEach((followBtn) => {
@@ -164,27 +186,5 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   profileFollowerBtn.addEventListener("mouseout", function() {
     this.removeAttribute("style", "background-color: #CCCCCC;");
-  });
-
-  // 投稿ボタン
-  const postBtns = document.querySelectorAll(".post-btn");
-  postBtns.forEach((postBtn) => {
-    postBtn.addEventListener("mouseover", function() {
-      this.setAttribute("style", "background-color: #666666;");
-    });
-    postBtn.addEventListener("mouseout", function() {
-      this.removeAttribute("style", "background-color: #666666;");
-    });
-  });
-
-  //新規登録・ログインボタン
-  const deviseBtns = document.querySelectorAll(".devise-btns");
-  deviseBtns.forEach((deviseBtn) => {
-    deviseBtn.addEventListener("mouseover", function() {
-      this.setAttribute("style", "background-color: #666666;");
-    });
-    deviseBtn.addEventListener("mouseout", function() {
-      this.removeAttribute("style", "background-color: #666666;");
-    });
   });
 });
