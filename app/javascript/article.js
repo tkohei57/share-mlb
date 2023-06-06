@@ -105,6 +105,67 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  // フォローボタン
+  const followBtns = document.querySelectorAll(".follow-btn");
+  followBtns.forEach((followBtn) => {
+    followBtn.addEventListener("mouseover", function() {
+      this.setAttribute("style", "background-color: #CCCCCC;");
+    });
+    followBtn.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "background-color: #CCCCCC;");
+    });
+  });
+
+  // フォロー解除ボタン
+  const unFollowBtns = document.querySelectorAll(".unfollow-btn");
+  unFollowBtns.forEach((unFollowBtn) => {
+    unFollowBtn.addEventListener("mouseover", function() {
+      this.setAttribute("style", "background-color: #666666;");
+    });
+    unFollowBtn.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "background-color: #666666;");
+    });
+  });
+
+  // フォローしているユーザーを選択した際に陰影をつける
+  const followBoxes = document.querySelectorAll(".follow-box")
+  followBoxes.forEach((followBox) => {
+    followBox.addEventListener('mouseover', function() {
+      this.setAttribute("style", "box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);");
+    });
+    followBox.addEventListener('mouseout', function() {
+      this.removeAttribute("style", "box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);");
+    });
+  });
+
+  // フォロー・フォロワーの表示
+  const profileFollowingBtn = document.getElementById("show-followings");
+  const profileFollowerBtn = document.getElementById("show-followers");
+  const followings = document.getElementById("user-followings");
+  const followers = document.getElementById("user-followers");
+  profileFollowingBtn.addEventListener("click", function() {
+    followings.setAttribute("style", "display: block;");
+    followers.setAttribute("style", "display: none;");
+  });
+  profileFollowerBtn.addEventListener("click", function() {
+    followings.setAttribute("style", "display: none;");
+    followers.setAttribute("style", "display: block;");
+  });
+
+  // フォロー・フォロワーボタン
+  profileFollowingBtn.addEventListener("mouseover", function() {
+    this.setAttribute("style", "background-color: #CCCCCC;");
+  });
+  profileFollowingBtn.addEventListener("mouseout", function() {
+    this.removeAttribute("style", "background-color: #CCCCCC;");
+  });
+  profileFollowerBtn.addEventListener("mouseover", function() {
+    this.setAttribute("style", "background-color: #CCCCCC;");
+  });
+  profileFollowerBtn.addEventListener("mouseout", function() {
+    this.removeAttribute("style", "background-color: #CCCCCC;");
+  });
+
   // 投稿ボタン
   const postBtns = document.querySelectorAll(".post-btn");
   postBtns.forEach((postBtn) => {
