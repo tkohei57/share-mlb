@@ -161,30 +161,52 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // フォロー・フォロワーの表示
-  const profileFollowingBtn = document.getElementById("show-followings");
-  const profileFollowerBtn = document.getElementById("show-followers");
+  const profileFollowingBtns = document.querySelectorAll("#show-followings");
+  const profileFollowerBtns = document.querySelectorAll("#show-followers");
   const followings = document.getElementById("user-followings");
   const followers = document.getElementById("user-followers");
-  profileFollowingBtn.addEventListener("click", function() {
-    followings.setAttribute("style", "display: block;");
-    followers.setAttribute("style", "display: none;");
+  profileFollowingBtns.forEach((profileFollowingBtn) => {
+    profileFollowingBtn.addEventListener("mouseover", function() {
+      this.setAttribute("style", "background-color: #CCCCCC;");
+    });
+    profileFollowingBtn.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "background-color: #CCCCCC;");
+    });
+    profileFollowingBtn.addEventListener("click", function() {
+      followings.setAttribute("style", "display: block;");
+      followers.setAttribute("style", "display: none;");
+    });
   });
-  profileFollowerBtn.addEventListener("click", function() {
-    followings.setAttribute("style", "display: none;");
-    followers.setAttribute("style", "display: block;");
+  profileFollowerBtns.forEach((profileFollowerBtn) => {
+    profileFollowerBtn.addEventListener("mouseover", function() {
+      this.setAttribute("style", "background-color: #CCCCCC;");
+    });
+    profileFollowerBtn.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "background-color: #CCCCCC;");
+    });
+    profileFollowerBtn.addEventListener("click", function() {
+      followings.setAttribute("style", "display: none;");
+      followers.setAttribute("style", "display: block;");
+    });
   });
+  
+  // 記事本文の一部選択
+  // function selection(event) {
+  //   const boldBtn = document.getElementById("bold-btn")
+  //   let selectArea = event.target.value.substring(
+  //     event.target.selectionStart,
+  //     event.target.selectionEnd
+  //   );
+  //   boldBtn.addEventListener("click", function() {
+  //     console.log(selectArea);
+  //   });
+  // };
+  
+  // const textArea = document.getElementById('content-form');
+  // textArea.addEventListener("select", selection);
+  
+  
 
-  // フォロー・フォロワーボタン
-  profileFollowingBtn.addEventListener("mouseover", function() {
-    this.setAttribute("style", "background-color: #CCCCCC;");
-  });
-  profileFollowingBtn.addEventListener("mouseout", function() {
-    this.removeAttribute("style", "background-color: #CCCCCC;");
-  });
-  profileFollowerBtn.addEventListener("mouseover", function() {
-    this.setAttribute("style", "background-color: #CCCCCC;");
-  });
-  profileFollowerBtn.addEventListener("mouseout", function() {
-    this.removeAttribute("style", "background-color: #CCCCCC;");
-  });
+  
+
 });

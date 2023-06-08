@@ -28,19 +28,20 @@
         <div id="previews" class="previews">
         </div>
       </div>
-      <div class="article-title">
-        <%= f.text_field :title, class: "title-form", placeholder: "タイトル" %>
-      </div>
+      <div class="article-main-area">
+        <div class="article-title">
+          <%= f.text_field :title, class: "title-form", placeholder: "タイトル" %>
+        </div>
 
-      <div class="article-content">
-        <%= f.text_area :content, class: "content-form", placeholder: "本文" %>
-      </div>
+        <div class="article-content">
+          <%= f.text_area :content, class: "content-form", id: "content-form", placeholder: "本文" %>
+        </div>
 
-      <div class="btn-contents">
-        <%= f.submit "投稿する" ,class: "post-btn" %>
-        <%= link_to 'トップページにもどる', root_path, class: "back-btn back-btns" %>
+        <div class="btn-contents">
+          <%= f.submit "投稿する" ,class: "post-btn" %>
+          <%= link_to 'トップページにもどる', root_path, class: "back-btn back-btns" %>
+        </div>
       </div>
-
     <% end %>
   </div>
 </div>

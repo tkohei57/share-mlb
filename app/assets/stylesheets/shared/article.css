@@ -55,11 +55,17 @@
   font-size: 14px;
 }
 
-.post-user-date {
-  display: flex;
-  align-items: center;
+.post-user-date-box {
+  width: 100%;
   position: absolute;
   bottom: 10px;
+}
+
+.post-user-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .post-user-link {
@@ -67,10 +73,12 @@
   color: black;
 }
 
-.post-date-box {
+.post-date {
   font-size: 12px;
-  margin-left: 440px;
   color: #999999;
+  margin-right: 25px;
+  position: absolute;
+  right: 5px;
 }
 
 /* いいね機能 */

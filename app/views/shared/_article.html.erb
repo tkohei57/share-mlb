@@ -9,12 +9,20 @@
     <div class="post-like" id="like-btn<%= article.id %>">
       <%= render partial: "shared/like", locals: { article: article } %>
     </div>
-    <div class="post-user-date">
-      <div class="post-user">
-        投稿者：<%= link_to article.user.nickname, user_path(article.user), class: "post-user-link users" %>
-      </div>
-      <div class="post-date-box">
-        投稿日時：<%= article.created_at %>
+    <div class="post-user-date-box">
+      <div class="post-user-date">
+        <% if user_signed_in? %>
+          <div class="post-user">
+            投稿者：<%= link_to article.user.nickname, user_path(article.user), class: "post-user-link users" %>
+          </div>
+        <% else %>
+          <div class="post-user-link">
+            投稿者：<%= article.user.nickname %>
+          </div>
+        <% end %>
+        <div class="post-date">
+          投稿日時：<%= article.created_at %>
+        </div>
       </div>
     </div>
   </div>
