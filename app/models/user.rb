@@ -18,9 +18,9 @@ class User < ApplicationRecord
   belongs_to :favorite_team
 
   validates :nickname, presence: true
-  validates :favorite_team_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :favorite_team_id, numericality: { other_than: 1, message: "を選択してください" }
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' }
+  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数字混合の6文字以上で設定してください' }
 
   def followed_by?(user)
     follower = passive_relationships.find_by(following_id: user.id)

@@ -8,7 +8,7 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :team_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :team_id, numericality: { other_than: 1, message: "を選択してください" }
 
   def self.search(search)
     if search != ""

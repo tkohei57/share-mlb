@@ -19,17 +19,22 @@ RSpec.describe Article, type: :model do
       it "タイトルが空では投稿できない" do
         @article.title = ""
         @article.valid?
-        expect(@article.errors.full_messages).to include("Title can't be blank")
+        expect(@article.errors.full_messages).to include("タイトルを入力してください")
       end
       it "記事の本文が空では投稿できない" do
         @article.content = ""
         @article.valid?
-        expect(@article.errors.full_messages).to include("Content can't be blank")
+        expect(@article.errors.full_messages).to include("本文を入力してください")
       end
       it "team_idが1では投稿できない" do
         @article.team_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include("Team can't be blank")
+        expect(@article.errors.full_messages).to include("チームを選択してください")
+      end
+      it 'userが紐づいていないと出品できない' do
+        @article.user = nil
+        @article.valid?
+        expect(@article.errors.full_messages).to include('Userを入力してください')
       end
     end
   end

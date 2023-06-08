@@ -1,4 +1,15 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ユーザー名
+        favorite_team_id: お気に入りチーム
+        favorite_player: お気に入り選手
+      article:
+        title: タイトル
+        content: 本文
+        team_id: チーム
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+
