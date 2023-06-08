@@ -18,7 +18,7 @@
       </div>
       
       <div class="show-date">
-        <%= @article.created_at %>
+        <%= l @article.created_at %>
       </div>
     </div>
     
@@ -62,7 +62,7 @@
               <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user-link" %><span class="honorific">さん</span>
             </div>
             <div class="comment-date">
-              <%= comment.created_at %>
+              <%= l comment.created_at %>
             </div>
           </div>
           <div class="comment-text-box">
