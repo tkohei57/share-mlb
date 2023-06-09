@@ -122,6 +122,9 @@
     <div class="user-article">
       <% if @articles.present? %>
         <%= render partial: "shared/article", collection: @articles %>
+        <div class="pagination">
+          <%= paginate @articles %>
+        </div>
       <% else %>
         <div class="no-user-article-message">
           <%= @user.nickname %>さんが投稿した記事はありません
@@ -160,7 +163,7 @@
               </div>
             </div>
             <div class="right-content">
-              <% if like.article.image.present?%>
+              <% if like.article.image.present? %>
                 <%= link_to image_tag(like.article.image, class: "image"), article_path(like.article) %>
               <% else %>
                 <%= image_tag("no_img.png", class: "no-image") %>
@@ -168,6 +171,7 @@
             </div>
           </div>
         <% end %>
+        <%#= paginate @likes %>
       <% else %>
         <div class="no-user-like-article-message">
           <%= @user.nickname %>さんがいいねした記事はありません

@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
 
   def index
-    @articles = Article.includes(:user).order('created_at DESC')
+    @articles = Article.includes(:user)
+    @articles = Article.page(params[:page]).per(5).order('created_at DESC')
   end
 
   def new
@@ -42,7 +43,7 @@ class ArticlesController < ApplicationController
   end
   
   def search
-    @articles = Article.search(params[:keyword])
+    @articles = Article.search(params[:keyword]).page(params[:page]).per(3).order('created_at DESC')
     @keyword = params[:keyword]
   end
 

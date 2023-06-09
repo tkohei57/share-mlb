@@ -10,11 +10,7 @@ class RelationshipsController < ApplicationController
   def destroy
     follow = current_user.active_relationships.find_by(follower_id: params[:user_id])
     follow.destroy
-    if current_user != @user
-      redirect_to user_path(current_user)
-    else
-      to_mypage
-    end
+    to_mypage
   end
 
   private

@@ -15,6 +15,9 @@
       </div>
       <% if @articles.present? %>
         <%= render partial: "shared/article", collection: @articles %>
+        <div class="pagination">
+          <%= paginate @articles %>
+        </div>
       <% else %>
         <div class="no-article-message">
           該当する記事は見つかりませんでした
