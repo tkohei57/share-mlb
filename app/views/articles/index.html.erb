@@ -23,6 +23,9 @@
     <div class="main-articles">
       <% if @articles.present? %>
         <%= render partial: "shared/article", collection: @articles %>
+        <div class="pagination">
+          <%= paginate @articles %>
+        </div>
       <% else %>
         <div class="no-articles">
           投稿された記事がありません
