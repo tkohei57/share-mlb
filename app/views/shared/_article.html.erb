@@ -4,7 +4,7 @@
       <%= link_to article.title, article_path(article), class: "title-link" %>
     </div>
     <div class="team">
-      関連するチーム：<%= link_to article.team.name, "#", class: "team-link teams" %>
+      関連するチーム：<%= article.team.name %>
     </div>
     <div class="post-like" id="like-btn<%= article.id %>">
       <%= render partial: "shared/like", locals: { article: article } %>

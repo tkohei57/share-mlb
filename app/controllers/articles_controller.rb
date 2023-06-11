@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.includes(:user)
     @articles = Article.page(params[:page]).per(5).order('created_at DESC')
+    @team_names = Team.first(31)
   end
 
   def new
@@ -45,6 +46,11 @@ class ArticlesController < ApplicationController
   def search
     @articles = Article.search(params[:keyword]).page(params[:page]).per(3).order('created_at DESC')
     @keyword = params[:keyword]
+  end
+
+  def team_search
+    @team = Team.find(params[:team_id])
+    @articles = Article.where(team_id: params[:team_id]).page(params[:page]).per(1).order('created_at DESC')
   end
 
   private

@@ -7,30 +7,47 @@
       MLBをより身近に
     </div>
   </div>
+  <div class="headline-search">
+    <div class="articles-headline">
+      投稿記事一覧
+      <i class="fa-solid fa-newspaper"></i>
+    </div>
+    <div class="search">
+      <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.text_field :keyword, placeholder: "キーワードで検索", class: "search-input" %>
+        <%= f.submit "検索", class: "search-btn" %>
+      <% end %>
+    </div>
+  </div>
   <div class="main-contents">
-    <div class="headline-search">
-      <div class="articles-headline">
-        投稿記事一覧
-        <i class="fa-solid fa-newspaper"></i>
-      </div>
-      <div class="search">
-        <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |f| %>
-          <%= f.text_field :keyword, placeholder: "キーワードで検索", class: "search-input" %>
-          <%= f.submit "検索", class: "search-btn" %>
-        <% end %>
+    <div class="main-left">
+      <div class="side-bar">
+        <div class="team-sort-headline">
+          チーム別検索
+        </div>
+        <div class="team-box">
+          <%= form_with(url: team_search_articles_path, local: true, method: :get, class: "team-search-form") do |f| %>
+            <%= f.collection_select(:team_id, Team.first(31), :id, :name, {}, {id:"item-category", class: "team-search-form"}) %>
+            <div class="team-search-btn-box">
+              <%= f.submit "検索", class: "team-search-btn", id: "side-bar-btn" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="main-articles">
-      <% if @articles.present? %>
-        <%= render partial: "shared/article", collection: @articles %>
-        <div class="pagination">
-          <%= paginate @articles %>
-        </div>
-      <% else %>
-        <div class="no-articles">
-          投稿された記事がありません
-        </div>
-      <% end %>
+    <div class="main-right">
+      <div class="main-articles">
+        <% if @articles.present? %>
+          <%= render partial: "shared/article", collection: @articles %>
+          <div class="pagination">
+            <%= paginate @articles %>
+          </div>
+        <% else %>
+          <div class="no-articles">
+            投稿された記事がありません
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

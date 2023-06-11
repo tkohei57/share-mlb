@@ -1,0 +1,26 @@
+<%= render "shared/header" %>
+
+<div class="team-search-main">
+  <div class="team-search-headline">
+    <%= @team.name %>に関する記事
+    <i class="fa-solid fa-newspaper"></i>
+  </div>
+  <div class="team-search-articles">
+    <% if @articles.present? %>
+      <div class="team-search-sub-message">
+        <%= @articles.length %>件見つかりました
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <%= render partial: "shared/article", collection: @articles %>
+      <div class="pagination">
+        <%= paginate @articles %>
+      </div>
+    <% else %>
+      <div class="no-articles">
+        投稿された記事がありません
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

@@ -189,6 +189,17 @@ document.addEventListener('DOMContentLoaded', function(){
       followers.setAttribute("style", "display: block;");
     });
   });
+
+  // チーム別検索ボタン
+  const sidebarBtn = document.getElementById("side-bar-btn");
+  if (!sidebarBtn) return null;
+
+  sidebarBtn.addEventListener('mouseover', function() {
+    this.setAttribute("style", "background-color: #666666;");
+  });
+  sidebarBtn.addEventListener('mouseout', function() {
+    this.removeAttribute("style", "background-color: #666666;");
+  });
   
   // 記事本文の一部選択
   // function selection(event) {
