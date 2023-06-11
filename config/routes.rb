@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    collection do
+      get 'team_search'
+    end
     resource :likes, only: [:create, :destroy]
   end
   resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
