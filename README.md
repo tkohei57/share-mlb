@@ -60,7 +60,6 @@ https://docs.google.com/spreadsheets/d/18NDfNvGBLrX8vlwi1smn1MIBrLcYzkTAOX7tlDcR
 
 # 実装予定の機能
 ・記事を投稿する際に、選択した文字を太字にしたり、フォントサイズを変えることができるような機能
-・チーム別ソート機能
 ・複数画像投稿機能
 ・試合データや選手データの表示機能(データを取得できるAPIがあれば)
 
