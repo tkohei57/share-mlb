@@ -6,6 +6,9 @@
     <div class="team">
       関連するチーム：<%= article.team.name %>
     </div>
+    <div class="article-tags-area">
+      <i class="fa-solid fa-tags tag-icon"></i><%= article.tags.map(&:name).join(', ') %>
+    </div>
     <div class="post-like" id="like-btn<%= article.id %>">
       <%= render partial: "shared/like", locals: { article: article } %>
     </div>
