@@ -34,6 +34,10 @@
       </div>
     </div>
 
+    <div class="show-article-tags">
+      <i class="fa-solid fa-tags tag-icon"></i><%= @article_tags.map(&:name).join(', ') %>
+    </div>
+
     <div class="show-image-box">
       <% if @article.image.present? %>
         <%= image_tag(@article.image, class: "show-image") %>

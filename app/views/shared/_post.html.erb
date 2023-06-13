@@ -33,6 +33,10 @@
           <%= f.text_field :title, class: "title-form", placeholder: "タイトル" %>
         </div>
 
+        <div class="article-tags">
+          <%= f.text_field :name, value: @tag_list, class: "tag-form", placeholder: '","で区切ってタグを入力' %>
+        </div>
+
         <div class="article-content">
           <%= f.text_area :content, class: "content-form", id: "content-form", placeholder: "本文" %>
         </div>

@@ -14,7 +14,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    tag_list = params[:article][:name].split(',')
     if @article.save
+      @article.save_tag(tag_list)
       to_root
     else
       render :new
@@ -24,13 +26,17 @@ class ArticlesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    @article_tags = @article.tags
   end
 
   def edit
+    @tag_list = @article.tags.pluck(:name).join(',')
   end
 
   def update
+    tag_list = params[:article][:name].split(',')
     if @article.update(article_params)
+      @article.save_tag(tag_list)
       redirect_to article_path(@article)
     else
       render :edit

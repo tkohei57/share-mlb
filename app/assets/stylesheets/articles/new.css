@@ -22,14 +22,19 @@
   margin-left: 5px;
 }
 
+.previews {
+  text-align: center;
+}
+
 .article-title {
   width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.previews {
-  text-align: center;
+.article-tags {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .article-content {
@@ -50,6 +55,15 @@
 }
 
 .title-form {
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 100%;
+  height: 50px;
+  padding: 5px 10px;
+}
+
+.tag-form {
   border: none;
   border-radius: 10px;
   font-size: 20px;

@@ -55,6 +55,14 @@
   font-size: 14px;
 }
 
+.article-tags-area {
+  font-size: 14px;
+}
+
+.tag-icon {
+  margin-right: 3px;
+}
+
 .post-user-date-box {
   width: 100%;
   position: absolute;
