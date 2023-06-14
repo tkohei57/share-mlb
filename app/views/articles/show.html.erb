@@ -24,7 +24,7 @@
     
     <div class="show-team-btns">
       <div class="show-team">
-        関連するチーム：<%= link_to @article.team.name, "#", class: "show-team-link teams" %>
+        関連するチーム：<%= @article.team.name %>
       </div>
       <div class="show-btns">
         <% if current_user == @article.user %>
@@ -35,7 +35,16 @@
     </div>
 
     <div class="show-article-tags">
-      <i class="fa-solid fa-tags tag-icon"></i><%= @article_tags.map(&:name).join(', ') %>
+      <i class="fa-solid fa-tags tag-icon"></i>
+      <% if @article.tags.present? %>
+        <% @article.tags.each do |article_tag| %>
+          <%= link_to article_tag.name, tag_search_path(tag_id: article_tag.id), class: "tags" %>
+        <% end %>
+      <% else %>
+        <span class="no-tag-message">
+          タグがつけられていません
+        </span>
+      <% end %>
     </div>
 
     <div class="show-image-box">

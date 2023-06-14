@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
+  get "tag_search", to: "articles#tag_search"
   resources :users do
     resource :relationships, only: [:create, :destroy]
   end

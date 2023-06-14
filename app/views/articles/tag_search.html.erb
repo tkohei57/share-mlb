@@ -1,19 +1,19 @@
 <%= render "shared/header" %>
 
-<div class="team-search-main">
+<div class="tag-search-main">
   <div class="search-result-message">
     <i class="fa-solid fa-magnifying-glass"></i>
-    " <%= @team.name %> " での検索結果
+    タグ " <%= @tag.name %> " での検索結果
   </div>
-  <div class="team-search-articles">
+  <div class="tag-search-result">
     <% if @articles.present? %>
       <%= render partial: "shared/article", collection: @articles %>
       <div class="pagination">
         <%= paginate @articles %>
       </div>
     <% else %>
-      <div class="no-articles">
-        投稿された記事がありません
+      <div class="no-article-message">
+        該当する記事は見つかりませんでした
       </div>
     <% end %>
   </div>
