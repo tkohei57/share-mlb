@@ -26,7 +26,7 @@ ID:admini
 ## 記事の投稿
 1,ログインする（ユーザー登録ができていない場合は、トップページのヘッダーの新規登録ボタンからユーザー登録を行う）。
 
-2,登録後、ヘッダーの投稿ボタンから新規投稿ページに移動し、必要な情報（画像（任意）・タイトル・本文）を入力して投稿する。
+2,登録後、ヘッダーの投稿ボタンから新規投稿ページに移動し、必要な情報（画像（任意）・タイトル・タグ・本文）を入力して投稿する。
 
 ## 記事の編集・削除(記事の投稿者のみ)
 1,ログインする（ユーザー登録ができていない場合は、トップページのヘッダーの新規登録ボタンからユーザー登録を行う）。
@@ -64,10 +64,10 @@ https://docs.google.com/spreadsheets/d/18NDfNvGBLrX8vlwi1smn1MIBrLcYzkTAOX7tlDcR
 ・試合データや選手データの表示機能(データを取得できるAPIがあれば)
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/5f09b2dc97afe6ade7ab42b8a68738e1.png)](https://gyazo.com/5f09b2dc97afe6ade7ab42b8a68738e1)
+[![Image from Gyazo](https://i.gyazo.com/d0af15f8339b172a5ed75d7ad0ef12be.png)](https://gyazo.com/d0af15f8339b172a5ed75d7ad0ef12be)
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/50085226df47689b6fc35e84cf4b2bdd.png)](https://gyazo.com/50085226df47689b6fc35e84cf4b2bdd)
+[![Image from Gyazo](https://i.gyazo.com/6a9139a82b6d1697976bd05d5f9bf884.png)](https://gyazo.com/6a9139a82b6d1697976bd05d5f9bf884)
 
 # 開発環境
 Ruby, Ruby on Rails, JavaScript, Render
