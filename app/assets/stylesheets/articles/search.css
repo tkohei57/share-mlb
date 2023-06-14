@@ -49,13 +49,10 @@
   background-color: #f0f0f0;
 }
 
-.team-search-headline {
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.team-search-sub-message {
-  font-size: 20px;
-  margin-bottom: 20px;
+/* タグ検索画面 */
+.tag-search-main {
+  width: 100%;
+  flex-grow: 1;
+  padding: 40px 150px 70px;
+  background-color: #f0f0f0;
 }

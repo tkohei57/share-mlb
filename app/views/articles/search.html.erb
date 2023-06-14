@@ -11,7 +11,7 @@
     <% if @keyword.present? %>
       <div class="search-result-message">
         <i class="fa-solid fa-magnifying-glass"></i>
-        " <%= @keyword %> " での検索結果：<%= @articles.length %>件
+        " <%= @keyword %> " での検索結果
       </div>
       <% if @articles.present? %>
         <%= render partial: "shared/article", collection: @articles %>

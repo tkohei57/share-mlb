@@ -190,6 +190,17 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  // タグにカーソルを合わせるとアンダーラインを表示
+  const tags = document.querySelectorAll(".tags");
+  tags.forEach((tag) => {
+    tag.addEventListener("mouseover", function() {
+      this.setAttribute("style", "text-decoration: underline;")
+    });
+    tag.addEventListener("mouseout", function() {
+      this.removeAttribute("style", "text-decoration: underline;")
+    });
+  });
+
   // チーム別検索ボタン
   const sidebarBtn = document.getElementById("side-bar-btn");
   if (!sidebarBtn) return null;
@@ -200,6 +211,8 @@ document.addEventListener('DOMContentLoaded', function(){
   sidebarBtn.addEventListener('mouseout', function() {
     this.removeAttribute("style", "background-color: #666666;");
   });
+
+  
   
   // 記事本文の一部選択
   // function selection(event) {
