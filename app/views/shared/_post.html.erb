@@ -42,8 +42,12 @@
         </div>
 
         <div class="btn-contents">
-          <%= f.submit "投稿する" ,class: "post-btn" %>
-          <%= link_to 'トップページにもどる', root_path, class: "back-btn back-btns" %>
+          <% if @article.new_record? %>
+            <%= f.submit "投稿する" ,class: "post-btn" %>
+          <% else %>
+            <%= f.submit "更新する" ,class: "post-btn" %>
+          <% end %>
+          <%= render "shared/to_top_page_btn" %>
         </div>
       </div>
     <% end %>
