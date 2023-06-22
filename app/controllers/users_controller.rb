@@ -6,4 +6,5 @@ class UsersController < ApplicationController
     @articles = @user.articles.page(params[:page]).per(3).order('created_at DESC')
     @likes = @user.likes.order('created_at DESC')
   end
+
 end

@@ -5,10 +5,25 @@
   padding: 40px 150px;
 }
 
+.mypage-headline {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .mypage-message {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 40px;
+}
+
+.mypage-edit-btn {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .profile-follow {

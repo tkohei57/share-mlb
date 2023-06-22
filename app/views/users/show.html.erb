@@ -1,9 +1,14 @@
 <%= render "shared/header" %>
 
 <div class="mypage-main">
-  <div class="mypage-message">
-    <%= @user.nickname %>さんのマイページ
-    <i class="fa-solid fa-house-circle-check"></i>
+  <div class="mypage-headline">
+    <div class="mypage-message">
+      <%= @user.nickname %>さんのマイページ
+      <i class="fa-solid fa-house-circle-check"></i>
+    </div>
+    <div class="mypage-edit">
+      <%= link_to "編集", "#", class: "mypage-edit-btn" %>
+    </div>
   </div>
   <div class="user-info">
     <div class="profile-follow">
