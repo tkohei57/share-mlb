@@ -83,8 +83,8 @@
   object-fit: cover;
 }
 
-.show-content {
-  padding: 0 100px;
+.show-contents {
+  padding: 0 100px 40px;
 }
 
 .content {

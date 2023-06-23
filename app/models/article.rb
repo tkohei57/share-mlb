@@ -1,15 +1,16 @@
 class Article < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :article_tags, dependent: :destroy
   has_many :tags, through: :article_tags
   has_one_attached :image
+  has_rich_text :contents
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :team
 
   validates :title, presence: true
-  validates :content, presence: true
+  validates :contents, presence: true
   validates :team_id, numericality: { other_than: 1, message: "を選択してください" }
 
   def self.search(search)

@@ -73,6 +73,18 @@
 }
 
 .content-form {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 100%;
+  height: 500px;
+  padding: 5px 10px;
+  overflow: scroll;
+}
+
+.contents-form {
+  background-color: white;
   border: none;
   border-radius: 10px;
   font-size: 20px;
