@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
     title { Faker::Lorem.word }
-    content { Faker::Lorem.sentence }
+    contents { Faker::Lorem.sentence }
     team_id { Faker::Number.between(from: 2, to: 32) }
     association :user
 
