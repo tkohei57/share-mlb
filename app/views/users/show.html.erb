@@ -7,7 +7,9 @@
       <i class="fa-solid fa-house-circle-check"></i>
     </div>
     <div class="mypage-edit">
-      <%= link_to "編集", "#", class: "mypage-edit-btn" %>
+      <% if @user == current_user %>
+        <%= link_to "編集", "#", class: "mypage-edit-btn" %>
+      <% end %>
     </div>
   </div>
   <div class="user-info">
