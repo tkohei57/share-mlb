@@ -9,6 +9,8 @@ ja:
         title: タイトル
         contents: 本文
         team_id: チーム
+      comment:
+        text: コメント
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
