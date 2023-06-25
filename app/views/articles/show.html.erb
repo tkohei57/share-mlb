@@ -12,6 +12,19 @@
       <%= render partial: "shared/like", locals: { article: @article } %>
     </div>
 
+    <div class="show-article-tags">
+      <i class="fa-solid fa-tags tag-icon"></i>
+      <% if @article.tags.present? %>
+        <% @article.tags.each do |article_tag| %>
+          <%= link_to article_tag.name, tag_search_path(tag_id: article_tag.id), class: "tags" %>
+        <% end %>
+      <% else %>
+        <span class="no-tag-message">
+          タグがつけられていません
+        </span>
+      <% end %>
+    </div>
+
     <div class="show-post-user-date"> 
       <div class="show-post-user">
         投稿者：<%= link_to @article.user.nickname, user_path(@article.user), class: "show-post-user-link users" %>
@@ -32,19 +45,6 @@
           <%= link_to "削除", article_path(@article), method: :delete, class: "edit-destroy-btn" %>
         <% end %>
       </div>
-    </div>
-
-    <div class="show-article-tags">
-      <i class="fa-solid fa-tags tag-icon"></i>
-      <% if @article.tags.present? %>
-        <% @article.tags.each do |article_tag| %>
-          <%= link_to article_tag.name, tag_search_path(tag_id: article_tag.id), class: "tags" %>
-        <% end %>
-      <% else %>
-        <span class="no-tag-message">
-          タグがつけられていません
-        </span>
-      <% end %>
     </div>
 
     <div class="show-image-box">
