@@ -59,13 +59,11 @@ ID:admini
 https://docs.google.com/spreadsheets/d/18NDfNvGBLrX8vlwi1smn1MIBrLcYzkTAOX7tlDcRDiM/edit#gid=982722306
 
 # 実装予定の機能
-・記事を投稿する際に、選択した文字を太字にしたり、フォントサイズを変えることができるような機能
-・複数画像投稿機能
 ・ユーザー情報編集機能(ユーザーアイコン等の追加)
 ・試合データや選手データの表示機能(データを取得できるAPIがあれば)
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/d0af15f8339b172a5ed75d7ad0ef12be.png)](https://gyazo.com/d0af15f8339b172a5ed75d7ad0ef12be)
+[![Image from Gyazo](https://i.gyazo.com/3b0c0392d0e83ecd76a4db3ec1cdc59f.png)](https://gyazo.com/3b0c0392d0e83ecd76a4db3ec1cdc59f)
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/6a9139a82b6d1697976bd05d5f9bf884.png)](https://gyazo.com/6a9139a82b6d1697976bd05d5f9bf884)
