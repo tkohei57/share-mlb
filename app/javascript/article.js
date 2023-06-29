@@ -212,23 +212,7 @@ document.addEventListener('DOMContentLoaded', function(){
     this.removeAttribute("style", "background-color: #666666;");
   });
 
-  
-  
-  // 記事本文の一部選択
-  // function selection(event) {
-  //   const boldBtn = document.getElementById("bold-btn")
-  //   let selectArea = event.target.value.substring(
-  //     event.target.selectionStart,
-  //     event.target.selectionEnd
-  //   );
-  //   boldBtn.addEventListener("click", function() {
-  //     console.log(selectArea);
-  //   });
-  // };
-  
-  // const textArea = document.getElementById('content-form');
-  // textArea.addEventListener("select", selection);
-  
+
   
 
   
